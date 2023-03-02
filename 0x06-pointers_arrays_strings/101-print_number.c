@@ -1,34 +1,23 @@
 #include "main.h"
-
 /**
- * print_number - prints number
- * @n: the number to process.
- *
- */
+  * print_number - prints number with _putchar
+  * @n: input number
+  * Return: no return
+ **/
 void print_number(int n)
 {
-	unsigned int num;
+	unsigned int number;
 
-	if (n < 10 && n >= 0)
-	{
-		_putchar('0' + n);
-		return;
-	}
+	number = n;
 	if (n < 0)
 	{
-		num = -n;
-		_putchar('-');
+	_putchar('-');
+	number = -n;
 	}
-	else
+	if (number / 10 != 0)
 	{
-		num = n;
+	print_number(number / 10);
 	}
-
-	if (num >= 10)
-	{
-		print_number(num / 10);
-	}
-	_putchar('0' + (num % 10));
+	_putchar((number % 10) + '0');
 }
-
 
